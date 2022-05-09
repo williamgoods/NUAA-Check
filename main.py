@@ -56,15 +56,15 @@ def generte_sh():
 
 def check():
     generte_sh()
-    # path = os.getcwd()
-    # bash = "bash "+os.path.join(path,"main.sh")
-    # result = os.popen(bash).read()
-    # logger.info(result)
-    # result = json.loads(result)
-    # if result['e'] == 0:
-    #     send("打卡成功")
-    # else:
-    #     send("打卡失败:"+result['m'])
+    path = os.getcwd()
+    bash = "bash "+os.path.join(path,"main.sh")
+    result = os.popen(bash).read()
+    logger.info(result)
+    result = json.loads(result)
+    if result['e'] == 0:
+        send("打卡成功")
+    else:
+        send("打卡失败:"+result['m'])
 
 
 if __name__ == "__main__":
