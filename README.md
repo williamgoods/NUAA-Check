@@ -9,11 +9,15 @@
 6. 提交并push新的代码
 
 <h2 id="canshu">参数配置</h2>
-
 sckey：在 [Server酱](https://sct.ftqq.com/sendkey) 绑定微信找到SendKey填入  
-key：加解密的密钥，自己定义的一串**长度为32**的不规则字符，例如:"lo9878iij6vfdni09fp9l0p12fgy6los"
+复制下图所示sendkey。
+![](https://cdn.jsdelivr.net/gh/li1553770945/images/20220509145808.png)
+新建如下sckey:
 ![](https://cdn.jsdelivr.net/gh/li1553770945/images/20220509144008.png)
+![](https://cdn.jsdelivr.net/gh/li1553770945/images/20220509145951.png)
 
+再新建一个，名字为 key,是加解密的密钥，自己定义的一串**长度为32**的不规则字符（下面一个步骤还会用到），例如:"lo9878iij6vfdni09fp9l0p12fgy6los"
+![](https://cdn.jsdelivr.net/gh/li1553770945/images/20220509150125.png)
 ## 注意：
 1. github的workflow过一段时间会失效（github会发邮件通知）,需要手动重新开启
 2. 如果您要修改打卡时间，请修改nuaa.yaml中的` - cron: '01 16 * * *'`,01代表分钟，16代表小时。请注时间是GMT时间，也就是比北京时间慢8个小时。
