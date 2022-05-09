@@ -13,10 +13,8 @@ jobs:
     steps:
     - name: save
       env:
-        student_id: ${{ secrets.STUDENT_ID }}
-        password: ${{ secrets.PASSWORD }}
-        sckey: ${{ secrets.SCKEY }}
-        address: ${{ secrets.ADDRESS }}
+        SCKEY: ${{ secrets.SCKEY }}
+        KEY: ${{ secrets.KEY}}
       run: |
         git clone https://github.com/li1553770945/NUAA-Check .
         sudo apt-get install python-setuptools python3-setuptools
