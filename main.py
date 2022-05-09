@@ -47,7 +47,7 @@ def generte_sh():
         index = content.find("date=")
         if index == -1:
             AssertionError("数据文件错误，请重新复制浏览器请求")
-        content = content[0:index+5] + datetime.datetime.now().strftime("%Y%m%d") + content[index+13:]
+        content = content[0:index+5] + (datetime.datetime.now()+ datetime.timedelta(hours=8)).strftime("%Y%m%d") + content[index+13:]
         index = content.find("created=")
         if index == -1:
             AssertionError("数据文件错误，请重新复制浏览器请求")
