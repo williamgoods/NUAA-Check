@@ -12,6 +12,7 @@
 
 sckey：在 [Server酱](https://sct.ftqq.com/sendkey) 绑定微信找到SendKey填入  
 key：加解密的密钥，自己定义的一串**长度为32**的不规则字符，例如:"lo9878iij6vfdni09fp9l0p12fgy6los"
+![](https://cdn.jsdelivr.net/gh/li1553770945/images/20220509144008.png)
 
 ## 注意：
 1. github的workflow过一段时间会失效（github会发邮件通知）,需要手动重新开启
