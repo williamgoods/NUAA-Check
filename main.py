@@ -47,24 +47,24 @@ def generte_sh():
         index = content.find("date=")
         if index == -1:
             AssertionError("数据文件错误，请重新复制浏览器请求")
-        content = content[0:index+5] + datetime.datetime.now().strftime("%Y%m%d") + content[index+13:-1]
+        content = content[0:index+5] + datetime.datetime.now().strftime("%Y%m%d") + content[index+13:]
         index = content.find("created=")
         if index == -1:
             AssertionError("数据文件错误，请重新复制浏览器请求")
-        content = content[0:index + 8] + str(int(time.time())) + content[index + 18:-1]
+        content = content[0:index + 8] + str(int(time.time())) + content[index + 18:]
         f.write(content)
 
 def check():
     generte_sh()
-    path = os.getcwd()
-    bash = "bash "+os.path.join(path,"main.sh")
-    result = os.popen(bash).read()
-    logger.info(result)
-    result = json.loads(result)
-    if result['e'] == 0:
-        send("打卡成功")
-    else:
-        send("打卡失败:"+result['m'])
+    # path = os.getcwd()
+    # bash = "bash "+os.path.join(path,"main.sh")
+    # result = os.popen(bash).read()
+    # logger.info(result)
+    # result = json.loads(result)
+    # if result['e'] == 0:
+    #     send("打卡成功")
+    # else:
+    #     send("打卡失败:"+result['m'])
 
 
 if __name__ == "__main__":
