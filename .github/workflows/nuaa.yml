@@ -18,6 +18,12 @@ jobs:
       run: |
         git clone https://github.com/li1553770945/NUAA-Check .
         sudo apt-get install python-setuptools python3-setuptools
-        pip3 install requests cpca
+        pip3 install certifi==2021.10.8 \
+        charset-normalizer==2.0.12 \
+        idna==3.3 \
+        pycryptodome==3.14.1 \
+        requests==2.27.1 \
+        urllib3==1.26.9 
+
         python3 main.py 
           
