@@ -4,7 +4,7 @@
 2. 在**自己的**github的settings(对，就是上面一栏code issues最后一个，点进去左边找到secrets里面设置下secrets,详见[参数配置](#canshu)
 3. clone自己的项目一份到本地，使用`pip install -r requirements.txt`安装项目依赖,新建文件key.txt，填写内容为上步中设置的key
 4. 使用谷歌或edge浏览器打开 [打卡链接](https://m.nuaa.edu.cn/ncov/wap/default/index) ，按F12打开控制台，手动进行打卡，按照如下方式复制curl命令
-![](https://cdn.jsdelivr.net/gh/li1553770945/images/20220509103352.png)
+![](https://cdn.jsdelivr.net/gh/li1553770945/images/20220509142654.png)
 5. 在项目目录新建data.txt，把刚刚复制的内容粘贴进去，运行encrypt.py
 6. 提交并push新的代码
 
