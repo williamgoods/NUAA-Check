@@ -10,8 +10,7 @@ from encrypt import AES_decrypt
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-sckey = os.getenv("SCKEY")
-key = os.getenv("KEY")
+
 
 
 def send(message):
@@ -70,6 +69,8 @@ def check():
 if __name__ == "__main__":
 
     try:
+        sckey = os.getenv("SCKEY")
+        key = os.getenv("KEY")
         check()
     except Exception as err:
         send("打卡失败，程序错误，" + repr(err))
