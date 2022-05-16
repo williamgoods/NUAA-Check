@@ -30,8 +30,14 @@ if __name__ == "__main__":
       data = f.read()
     with open("key.txt","r") as f:
       key = f.read()
+    if len(key) > 32:
+        key = key[0:32]
+    elif len(key) < 32:
+        raise AssertionError("密钥字符串key.txt内容小于32字符")
     with open("encrypt.txt","w") as f:
         AES_encrypt(key, data)
         enctext = AES_encrypt(key, data)
         f.write(enctext)
+
+    print("加密成功")
 
