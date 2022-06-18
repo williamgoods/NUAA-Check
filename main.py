@@ -40,16 +40,22 @@ def generte_sh():
     with open(encrypt_file, "r") as f:
         content = f.read()
     content = AES_decrypt(key, content)
+
+    print("content: ", content)
+
+    index = content.index("date=")
+    print("date index: ", index)
+    if index == -1:
+        AssertionError("数据文件错误，请重新复制浏览器请求")
+    content = content[0:index + 5] + (datetime.datetime.now() + datetime.timedelta(hours=8)).strftime(
+        "%Y%m%d") + content[index + 13:]
+    index = content.index("created=")
+    print("created index: ", index)
+    if index == -1:
+        AssertionError("数据文件错误，请重新复制浏览器请求")
+    content = content[0:index + 8] + str(int(time.time())) + content[index + 18:]
+
     with open(os.path.join(path, "main.sh"), "w") as f:
-        index = content.find("date=")
-        if index == -1:
-            AssertionError("数据文件错误，请重新复制浏览器请求")
-        content = content[0:index + 5] + (datetime.datetime.now() + datetime.timedelta(hours=8)).strftime(
-            "%Y%m%d") + content[index + 13:]
-        index = content.find("created=")
-        if index == -1:
-            AssertionError("数据文件错误，请重新复制浏览器请求")
-        content = content[0:index + 8] + str(int(time.time())) + content[index + 18:]
         f.write(content)
 
 
@@ -67,7 +73,6 @@ def check():
 
 
 if __name__ == "__main__":
-
     try:
         sckey = os.getenv("SCKEY")
         key = os.getenv("KEY")

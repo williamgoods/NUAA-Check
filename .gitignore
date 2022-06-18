@@ -4,3 +4,4 @@ venv
 data.txt
 key.txt
 main.sh
+__pycache__/*
